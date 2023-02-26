@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #7FA480;
+    /* use padding */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    /* border: solid 2px blue; */
+    height: 200px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    /* flex: 10; */
+    /* border: solid 2px blue; */
+    gap: 8px;
+    height: 550px;
+    padding: 10px;
+
+}
+
+
+footer {
+    /* flex: 2; */
+    /* border: solid 2px blue; */
+    text-align: center;
+    height: 70px;
+    padding: 10px;
+}
+
+.instruction {
+    display: flex;
+    flex: 2;
+    /* border: solid 2px red; */
+}
+
+.screenAndControl {
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    /* border: solid 2px red; */
+    gap: 5px;
+}
+.screen {
+    display: flex;
+    /* flex: 10; */
+    /* border: solid 2px yellow; */
+    height: 400px;
+    background: url(./images/screenwithoutbackground_v3.gif),url(./images/sun_v2.gif);
+    background-size: contain, 130px;
+    background-repeat: no-repeat;
+    background-position:0px 0px, 15px 7px;
+    position: relative;
+    background-color: #7FA480;
+}
+
+#pot {
+    background-color: brown;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 250px;
+    left: 280px;
+}
+
+.control {
+    display: flex;
+    justify-content: space-evenly;
+    /* border: solid 2px yellow; */
+}
+.control button{
+    padding: 5px;
+}
+
+.dataBox {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    /* border: solid 2px red; */
+    gap: 3px;
+}
+
+.dataBox .growingDatas {
+    display: flex;
+    flex: 1;
+    /* border: solid 2px green; */
+}
+
+.dataBox .message {
+    display: flex;
+    flex: 3;
+    /* border: solid 2px green; */
+}
+
+ul {
+    list-style: none;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

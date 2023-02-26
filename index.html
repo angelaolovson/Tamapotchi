@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <script defer src="./app.js"></script>
+    <title>TAMAGOTCHI</title>
+  </head>
+  <body>
+    <header>
+      <h1>TAMAGOTREE/TAMAGARDEN</h1>
+    </header>
+    
+    <main>
+      <div class="instruction"> Instruction</div>
+      
+      <div class="screenAndControl">
+        <div class = "screen">
+          <div id="pot"></div>
+        </div>
+        <div class = "control">
+          <button id="startButton">START</button>
+          <button id="waterButton">WATER</button>
+          <button id="sunlightButton">SUNLIGHT</button>
+          <button id="fertilizerButton">FERTILIZER</button>
+          <button id="pesticideButton">PESTICIDE</button>
+          <button id="cutButton">CUT</button>
+        </div>
+      </div> 
+      
+      <div class="dataBox">
+        <div class="growingDatas">
+          <ul>
+            <li>Grow: <div id="growData"></div></li>
+            <li>Water: <div id="waterData"></div></li>
+            <li>Sunlight: <div id="sunlightData"></div></li>
+            <li>Fertilizer: <div id="fertilizerData"></div></li>
+            <li>Pest Infection: <div id="pestData"></div></li>
+          </ul>
+        </div>
+        <div class="message"> Message from the plant</div>
+      </div>
+    </main>
+
+     
+    
+    <footer>My Application copyright 2023 Angela Olovson</footer>
+  </body>
+</html>
