@@ -61,4 +61,3 @@ If Grow = 10, win the game!
 * As a player, I would like to have a cut-flower gif playing after I click on the cut button.
 * As a player, I would like to have a restart button after the above and after I lose the game.
 * As a player, I would like to have the random selection for the blooming flower (3 random options).
-![image](https://user-images.githubusercontent.com/122236820/222004634-c0f9023b-9512-43ee-8945-16a47628fe40.png)
