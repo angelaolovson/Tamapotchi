@@ -23,7 +23,7 @@ const fertilizerButton = document.getElementById("fertilizerButton");
 const pesticideButton = document.getElementById("pesticideButton");
 
 // Starting data & rules
-class Tamagotree {
+class Tamagotchi {
     constructor () {
     this.grow = 0,
     this.water= 4,
@@ -81,119 +81,85 @@ class Tamagotree {
 
 
     born () {
-        console.log("A secret seed has beeb planted and a sprout has born!");
+        console.log("A secret seed has been planted and a sprout has born!");
         
         
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
-        }, 10000);
+        }, 15000);
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 4000);
+        }, 6000);
 
 
         state.sunlightCount = setInterval( () => {
             this.sunlighting()
-        }, 5000);
+        }, 7000);
 
 
         state.fertilizerCount = setInterval( () => {
             this.fertilizing()
-        }, 8000);
+        }, 10000);
 
         state.pesticideCount = setInterval( () => {
             this.bugging()
-        }, 11000);
+        }, 15000);
     }
 
 
-    // interacting
+    // interacting functions
     addingWater () {
         this.water = this.water + 2; 
+    }
+
+    addingSunlight () {
+        this.sunlight = this.sunlight + 4; 
+    }
+
+    addingFertilizer () {
+        this.fertilizer = this.fertilizer + 3; 
+    }
+
+    killingBugs () {
+        this.pesticide = this.pesticide - 3; 
     }
 }
 
 
-
+const plant = new Tamagotchi();
 
 // click start to start the game
 startButton.addEventListener("click", function (){
-    const plant = new Tamagotree();
     plant.born();
+    growDataHTML.innerText = 0;
+    waterDataHTML.innerText = 4;
+    sunlightDataHTML.innerText = 5;
+    fertilizerDataHTML.innerText = 5;
+    pesticideDataHTML.innerText = 0;
+})
+
+
+// user clicks on buttons to increase/decrease the data
+waterButton.addEventListener("click", function (){
     plant.addingWater();
 })
 
-waterButton.addEventListener("click", function (){
-    Tamagotree.addingWater();
+sunlightButton.addEventListener("click", function (){
+    plant.addingSunlight();    
+})
+
+fertilizerButton.addEventListener("click", function (){
+    plant.addingFertilizer();    
+})
+
+pesticideButton.addEventListener("click", function (){
+    plant.killingBugs();    
 })
 
 
-
-// waterButton.addEventListener("click", function (){
-//     state.waterCount = state.waterCount + 2
-// })
-
-
-// // setInterval for data on the top right
-// const growIncreasingTime = (initialValue) => {
-    //     let i = initialValue;
-    //     document.getElementById("growData").textContent = i;
-//     return setInterval(() => {
-//         i = i + 1;
-//         console.log(i);
-//         document.getElementById("growData").textContent = i;
-//     }, 10000
-//     ) 
-// };
-
-// const waterData = document.getElementById("waterData")
-// const waterDecreasingTime = (initialValue) => {
-//     let i = initialValue;
-//     waterData.textContent = i;
-//     document.getElementById("waterButton").addEventListener("click", function(){
-//         return i = i + 2;
-//     });
-//     return setInterval(() => {
-//         i = i - 1;
-//         console.log(i);
-//         waterData.textContent = i;
-//     }, 5000);
-// };
-
-
-// const sunDecreasingTime = (initialValue) => {
-//     let i = initialValue;
-//     document.getElementById("sunlightData").textContent = i;
-//     return setInterval(() => {
-//         i = i - 1;
-//         console.log(i);
-//         document.getElementById("sunlightData").textContent = i;
-//     }, 4000
-// )
-// };
-// const fertilizerDecreasingTime = (initialValue) => {
-//     let i = initialValue;
-//     document.getElementById("fertilizerData").textContent = i;
-//     return setInterval(() => {
-//         i = i - 1;
-//         console.log(i);
-//         document.getElementById("fertilizerData").textContent = i;
-//     }, 6000
-// )
-// };
-// const pestIncreasingTime = (initialValue) => {
-//     let i = initialValue;
-//     document.getElementById("pestData").textContent = i;
-//     return setInterval(() => {
-//         i = i + 1;
-//         console.log(i);
-//         document.getElementById("pestData").textContent = i;
-//     }, 7000
-// )
-// };
-
+//while loop for the plant 0 = pot, 1~4 sprout, 5~9 leaves, 10 flower, css show and hide imgs
 
 
 

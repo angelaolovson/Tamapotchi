@@ -16,6 +16,7 @@ header {
     justify-content: center;
     /* border: solid 2px blue; */
     height: 200px;
+    padding-top: 120px;
 }
 
 main {
@@ -42,44 +43,83 @@ footer {
     display: flex;
     flex: 2;
     /* border: solid 2px red; */
+    justify-content: right;
+    padding: 5px;
 }
 
 .screenAndControl {
     display: flex;
     flex-direction: column;
-    flex: 4;
+    flex: 2;
     /* border: solid 2px red; */
     gap: 5px;
+    width: 530px;
 }
 .screen {
     display: flex;
-    /* flex: 10; */
     /* border: solid 2px yellow; */
-    height: 400px;
-    background: url(./images/screenwithoutbackground_v3.gif),url(./images/sun_v2.gif);
-    background-size: contain, 130px;
+    height: 402px;
+    width: 530px;
+    background: url(./images/screenwithoutbackground_v3.gif);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position:0px 0px, 15px 7px;
     position: relative;
-    background-color: #7FA480;
+}
+
+#sky {
+    background: url(./images/sky-cropped.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 380px;
+    width: 500px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: -10;
+    opacity: .9;
+    background-color: white;
+}
+
+#sungif {
+    background: url(./images/sun_v2.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    z-index: -5;
 }
 
 #pot {
-    background-color: brown;
-    height: 120px;
-    width: 120px;
+    background: url(./images/sprout.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 230px;
+    width: 200px;
     position: absolute;
-    top: 250px;
-    left: 280px;
+    top: 180px;
+    left: 250px;
+    border-radius: 20px;
 }
+
+
+
 
 .control {
     display: flex;
     justify-content: space-evenly;
     /* border: solid 2px yellow; */
+    width: 530px;
 }
+
+
 .control button{
     padding: 5px;
+    background-color: white;
+    border: #3b5f3c 2px;
 }
 
 .dataBox {
