@@ -7,7 +7,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: #7FA480;
+    background-color: rgb(193, 179, 141);
     /* use padding */
 }
 
@@ -53,59 +53,148 @@ footer {
     flex: 2;
     /* border: solid 2px red; */
     gap: 5px;
-    width: 530px;
+    width: 700px;
 }
 .screen {
     display: flex;
-    /* border: solid 2px yellow; */
-    height: 402px;
-    width: 530px;
+    /* border: solid 2px yellow; */  
+    position: relative;
+    height: 560px;
+    width: 660px;
+    background-color: rgb(193, 179, 141);
+    z-index: -20;
+    /* box-shadow: 0 30px 40px rgba(239, 244, 233, 0.9); */
+}
+
+#window{
     background: url(./images/screenwithoutbackground_v3.gif);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position:0px 0px, 15px 7px;
-    position: relative;
+    height: 480px;
+    width: 600px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+
 }
 
 #sky {
     background: url(./images/sky-cropped.jpeg);
-    background-size: contain;
+    /* background-size: contain; */
     background-repeat: no-repeat;
-    height: 380px;
-    width: 500px;
+    height: 480px;
+    width: 600px;
     position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: -10;
+    top: 25px;
+    left: 32px;
+    z-index: -8;
     opacity: .9;
-    background-color: white;
 }
 
-#sungif {
+#sunGif {
     background: url(./images/sun_v2.gif);
     background-size: contain;
     background-repeat: no-repeat;
     height: 180px;
     width: 180px;
     position: absolute;
-    top: 15px;
-    left: 5px;
+    top: 25px;
+    left: 45px;
     z-index: -5;
+    display: none;
 }
 
-#pot {
-    background: url(./images/sprout.gif);
+#potGif {
+    background: url(./images/sprout-pot-only.gif);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 230px;
-    width: 200px;
+    height: 300px;
+    width: 250px;
     position: absolute;
     top: 180px;
-    left: 250px;
+    left: 290px;
     border-radius: 20px;
 }
 
+#sproutGif {
+    background: url(./images/sprout-sprout.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 180px;
+    left: 290px;
+    border-radius: 20px;
+}
 
+#leavesGif {
+    background: url(./images/sprout-leaves.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 180px;
+    left: 290px;
+    border-radius: 20px;
+    display: none;
+}
+
+#flowerGif {
+    background: url(./images/sprout-flowers.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 270px;
+    position: absolute;
+    top: 140px;
+    left: 270px;
+    border-radius: 20px;
+    display: none;
+}
+
+
+
+#wateringCanGif {
+    background: url(./images/watercan3.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 180px;
+    left: -290px;
+    border-radius: 20px;
+    display: none;
+}
+#pesticideGif {
+    background: url(./images/pesticide-repeat.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 310px;
+    width: 230px;
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    border-radius: 20px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    display: none;
+}
+
+#fertilizerGif {
+    background: url(./images/fertilizer-repeat.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 115px;
+    left: 300px;
+    border-radius: 20px;
+    display: none;
+}
 
 
 .control {
@@ -118,8 +207,11 @@ footer {
 
 .control button{
     padding: 5px;
-    background-color: white;
-    border: #3b5f3c 2px;
+    margin: 5px;
+    background-color: #7fa480;
+    border: solid white 3px;
+    color: white;
+    border-radius: 10px;
 }
 
 .dataBox {

@@ -15,12 +15,25 @@ const sunlightDataHTML = document.getElementById("sunlightData")
 const fertilizerDataHTML = document.getElementById("fertilizerData")
 const pesticideDataHTML = document.getElementById("pestData")
 
-// Buttons eventListeners
+// Buttons
 const startButton = document.getElementById("startButton");
 const waterButton = document.getElementById("waterButton");
 const sunlightButton = document.getElementById("sunlightButton");
 const fertilizerButton = document.getElementById("fertilizerButton");
 const pesticideButton = document.getElementById("pesticideButton");
+
+// Gifs
+const sproutGif = document.getElementById("sproutGif")
+const sproutDeadGif= document.getElementById("sproutDeadGif")
+const leavesGif= document.getElementById("leavesGif")
+const leavesDeadGif= document.getElementById("leavesDeadGif")
+const flowerGif= document.getElementById("flowerGif")
+const wateringCanGif= document.getElementById("wateringCanGif")
+const sunGif= document.getElementById("sunGif")
+const fertilizerGif= document.getElementById("fertilizerGif")
+const pesticideGif= document.getElementById("pesticideGif")
+
+
 
 // Starting data & rules
 class Tamagotchi {
@@ -74,6 +87,7 @@ class Tamagotchi {
         }
     };
     
+
     growing () {
         this.grow += 1;
         growDataHTML.innerText = this.grow;
@@ -82,8 +96,7 @@ class Tamagotchi {
 
     born () {
         console.log("A secret seed has been planted and a sprout has born!");
-        
-        
+                
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
@@ -141,22 +154,34 @@ startButton.addEventListener("click", function (){
 })
 
 
-// user clicks on buttons to increase/decrease the data
+// user onclicks to increase/decrease the data
 waterButton.addEventListener("click", function (){
     plant.addingWater();
+    wateringCanGif.style.display = "block";
+    setTimeout("wateringCanGif.style.display='none';", 1750);
 })
 
 sunlightButton.addEventListener("click", function (){
-    plant.addingSunlight();    
+    plant.addingSunlight();
+    sunGif.style.display = "block";
+    setTimeout("sunGif.style.display='none';", 3000);    
 })
 
 fertilizerButton.addEventListener("click", function (){
-    plant.addingFertilizer();    
+    plant.addingFertilizer();
+    fertilizerGif.style.display = "block";
+    setTimeout("fertilizerGif.style.display='none';", 2200);    
 })
 
 pesticideButton.addEventListener("click", function (){
-    plant.killingBugs();    
+    plant.killingBugs();
+    pesticideGif.style.display = "block";
+    setTimeout("pesticideGif.style.display='none';", 1500);    
 })
+
+
+
+
 
 
 //while loop for the plant 0 = pot, 1~4 sprout, 5~9 leaves, 10 flower, css show and hide imgs
