@@ -14,6 +14,7 @@ const waterDataHTML = document.getElementById("waterData")
 const sunlightDataHTML = document.getElementById("sunlightData")
 const fertilizerDataHTML = document.getElementById("fertilizerData")
 const pesticideDataHTML = document.getElementById("pestData")
+const messages = document.getElementById("messages")
 
 // Buttons
 const startButton = document.getElementById("startButton");
@@ -36,7 +37,7 @@ const pesticideGif= document.getElementById("pesticideGif")
 
 
 // Starting data & rules
-class Tamagotchi {
+class Tamapotchi {
     constructor () {
     this.grow = 0,
     this.water= 4,
@@ -91,11 +92,18 @@ class Tamagotchi {
     growing () {
         this.grow += 1;
         growDataHTML.innerText = this.grow;
+        if (this.grow >= 1 && this.grow <= 5) {
+            sproutGif.style.display = "block";
+        } else if (this.grow >= 6 && this.grow <= 9) {
+            leavesGif.style.display = "block";
+        } else if (this.grow = 10) {
+            flowerGif.style.display = "block"
+        }
     };
 
 
     born () {
-        console.log("A secret seed has been planted and a sprout has born!");
+        messages.innerText = ("A secret seed has been planted and waiting for sprouting!");
                 
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
@@ -141,20 +149,18 @@ class Tamagotchi {
 }
 
 
-const plant = new Tamagotchi();
+const plant = new Tamapotchi();
 
-// click start to start the game
+// user clicks start to start the game and ncrease/decrease the data
 startButton.addEventListener("click", function (){
     plant.born();
-    growDataHTML.innerText = 0;
-    waterDataHTML.innerText = 4;
-    sunlightDataHTML.innerText = 5;
-    fertilizerDataHTML.innerText = 5;
-    pesticideDataHTML.innerText = 0;
+    growDataHTML.innerText = plant.grow;
+    waterDataHTML.innerText = plant.water;
+    sunlightDataHTML.innerText = plant.sunlight;
+    fertilizerDataHTML.innerText = plant.fertilizer;
+    pesticideDataHTML.innerText = plant.pesticide;
 })
 
-
-// user onclicks to increase/decrease the data
 waterButton.addEventListener("click", function (){
     plant.addingWater();
     wateringCanGif.style.display = "block";
