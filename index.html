@@ -18,7 +18,7 @@
     <main>
       <div class="instruction"> Instruction</div>
       
-      <div class="screenAndControl">
+      <div class="screenAndDataBox">
         <div class = "screen">
           <div id="window"></div>
           <div id="sky"></div>
@@ -32,28 +32,33 @@
           <div id="wateringCanGif"></div>
           <div id="pesticideGif"></div>
           <div id="fertilizerGif"></div>
+          <div id="butterfly"></div>
+          <div id="storm"></div>
+          <div id="blackLayer"></div>
         </div>
-        <div class = "control">
-          <button id="startButton">START</button>
-          <button id="waterButton">WATER</button>
-          <button id="sunlightButton">SUNLIGHT</button>
-          <button id="fertilizerButton">FERTILIZER</button>
-          <button id="pesticideButton">PESTICIDE</button>
-          <!-- <button id="cutButton">CUT</button> -->
+        <div class="dataBox">
+          <div class="growingDatas">
+            <ul>
+              <li>Grow: <span id="growData"></span></li>
+              <li>Water: <span id="waterData"></span></li>
+              <li>Sunlight: <span id="sunlightData"></span></li>
+              <li>Fertilizer: <span id="fertilizerData"></span></li>
+              <li>Pest Infection: <span id="pestData"></span></li>
+            </ul>
+          </div>
+          <div id="messages"></div>
         </div>
+        
       </div> 
       
-      <div class="dataBox">
-        <div class="growingDatas">
-          <ul>
-            <li>Grow: <div id="growData"></div></li>
-            <li>Water: <div id="waterData"></div></li>
-            <li>Sunlight: <div id="sunlightData"></div></li>
-            <li>Fertilizer: <div id="fertilizerData"></div></li>
-            <li>Pest Infection: <div id="pestData"></div></li>
-          </ul>
-        </div>
-        <div id="messages"></div>
+      
+      <div class = "control">
+        <button id="startButton">START</button>
+        <button id="waterButton">WATER</button>
+        <button id="sunlightButton">SUNLIGHT</button>
+        <button id="fertilizerButton">FERTILIZER</button>
+        <button id="pesticideButton">PESTICIDE</button>
+        <!-- <button id="cutButton">CUT</button> -->
       </div>
     </main>
 

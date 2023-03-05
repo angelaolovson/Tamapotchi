@@ -33,6 +33,9 @@ const wateringCanGif= document.getElementById("wateringCanGif")
 const sunGif= document.getElementById("sunGif")
 const fertilizerGif= document.getElementById("fertilizerGif")
 const pesticideGif= document.getElementById("pesticideGif")
+const butterfly = document.getElementById("butterfly")
+const storm = document.getElementById("butterfly")
+const blackLayer = document.getElementById("butterfly")
 
 
 
@@ -40,8 +43,8 @@ const pesticideGif= document.getElementById("pesticideGif")
 class Tamapotchi {
     constructor () {
     this.grow = 0,
-    this.water= 4,
-    this.sunlight= 5,
+    this.water= 5,
+    this.sunlight= 7,
     this.fertilizer= 5,
     this.pesticide= 0
     }
@@ -51,9 +54,13 @@ class Tamapotchi {
         this.water -= 1;
         waterDataHTML.innerText = this.water;
         if (this.water <= 3) {
-            console.log("Water meee!")
+            messages.innerText = "Water meee!";
         } else if(this.water >= 8) {
-            console.log("Too much water!!!")
+            messages.innerText ="Too much water!!!";
+        }
+        if (this.water === 0 || this.water >= 10) {
+            deadPlant();
+            clearIntervals();
         }
     };
     
@@ -62,9 +69,13 @@ class Tamapotchi {
         this.sunlight -= 1;
         sunlightDataHTML.innerText = this.sunlight;
         if (this.sunlight < 5) {
-            console.log("Need a sunbath :)")
+            messages.innerText = "Need a sunbath :)";
         } else if (this.sunlight >= 10) {
             this.sunlight = 10;
+        }
+        if (this.sunlight === 0) {
+            clearIntervals();
+            deadPlant();
         }
     };
 
@@ -73,9 +84,13 @@ class Tamapotchi {
         this.fertilizer -= 1;
         fertilizerDataHTML.innerText = this.fertilizer;
         if (this.fertilizer < 3) {
-            console.log("Want some plant food!")
+            messages.innerText = "Want some plant food!";
         } else if (this.fertilizer > 6) {
-            console.log("Too much plant food!")
+            messages.innerText = "Too much plant food!";
+        }
+        if (this.fertilizer === 0 || this.fertilizer >= 10) {
+            clearIntervals();
+            deadPlant();
         }
     };
 
@@ -84,7 +99,11 @@ class Tamapotchi {
         this.pesticide += 1;
         pesticideDataHTML.innerText = this.pesticide;
         if (this.pesticide > 4) {
-            console.log("These bugs are killing me!")
+            messages.innerText = "These bugs are killing me!";
+        }
+        if (this.bugging === -2 || this.bugging === 10) {
+            clearIntervals();
+            deadPlant();
         }
     };
     
@@ -96,8 +115,15 @@ class Tamapotchi {
             sproutGif.style.display = "block";
         } else if (this.grow >= 6 && this.grow <= 9) {
             leavesGif.style.display = "block";
-        } else if (this.grow = 10) {
-            flowerGif.style.display = "block"
+        } else if (this.grow === 10) {
+            flowerGif.style.display = "block";
+            butterfly.style.display = "block";
+            clearIntervals();
+        }
+        if (this.grow === 1) {
+            messages.innerText = ("Here is the sprout!")
+        } else if (this.grow === 6) {
+            messages.innerText = ("It got taller!")
         }
     };
 
@@ -108,11 +134,11 @@ class Tamapotchi {
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
-        }, 15000);
+        }, 1000);
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 6000);
+        }, 1000);
 
 
         state.sunlightCount = setInterval( () => {
@@ -158,8 +184,10 @@ startButton.addEventListener("click", function (){
     waterDataHTML.innerText = plant.water;
     sunlightDataHTML.innerText = plant.sunlight;
     fertilizerDataHTML.innerText = plant.fertilizer;
-    pesticideDataHTML.innerText = plant.pesticide;
+    pesticideDataHTML.innerText = plant.pesticide;  
 })
+
+
 
 waterButton.addEventListener("click", function (){
     plant.addingWater();
@@ -184,13 +212,31 @@ pesticideButton.addEventListener("click", function (){
     pesticideGif.style.display = "block";
     setTimeout("pesticideGif.style.display='none';", 1500);    
 })
+ 
+
+// Stop the game
+function clearIntervals () {
+    clearInterval(state.growCount)
+    clearInterval(state.waterCount)
+    clearInterval(state.sunlightCount)
+    clearInterval(state.fertilizerCount)
+    clearInterval(state.pesticideCount)
+} // why born(state.growCount) doesn't work?
+
+function deadPlant () {
+    // blackLayer.style.display = "block";
+    if (plant.grow >= 1 && plant.grow <= 5 ) {
+        sproutGif.style.display = "none";
+        sproutDeadGif.style.display = "block";
+        
+    } else if (plant.grow >=6 && plant.grow <= 9 ) {
+        leavesGif.style.display = "none";
+        leavesDeadGif.style.display = "block";
+    } 
+}
 
 
 
-
-
-
-//while loop for the plant 0 = pot, 1~4 sprout, 5~9 leaves, 10 flower, css show and hide imgs
 
 
 
