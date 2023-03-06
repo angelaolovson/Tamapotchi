@@ -22,6 +22,9 @@ const waterButton = document.getElementById("waterButton");
 const sunlightButton = document.getElementById("sunlightButton");
 const fertilizerButton = document.getElementById("fertilizerButton");
 const pesticideButton = document.getElementById("pesticideButton");
+const restartButton = document.getElementsByClassName("restartButton");
+// trouble with using getelementsbyclassname to get elemnt
+
 
 // Gifs
 const sproutGif = document.getElementById("sproutGif")
@@ -34,10 +37,16 @@ const sunGif= document.getElementById("sunGif")
 const fertilizerGif= document.getElementById("fertilizerGif")
 const pesticideGif= document.getElementById("pesticideGif")
 const butterfly = document.getElementById("butterfly")
-const storm = document.getElementById("butterfly")
-const blackLayer = document.getElementById("butterfly")
+const storm = document.getElementById("storm")
+const blackLayer = document.getElementById("blackLayer")
 
-
+// //User's name
+// let userName = prompt("Please enter your name", "Your Name")
+// if(userName != null) {
+//     messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
+// } else {
+//     messages.innerText = "Hi stranger! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
+// }
 
 // Starting data & rules
 class Tamapotchi {
@@ -58,7 +67,12 @@ class Tamapotchi {
         } else if(this.water >= 8) {
             messages.innerText ="Too much water!!!";
         }
-        if (this.water === 0 || this.water >= 10) {
+        if (this.water === 0) {
+            messages.innerText ="Died from thirsty :("
+            deadPlant();
+            clearIntervals();
+        } else if(this.water >= 10) {
+            messages.innerText ="Died from rotten roots :("
             deadPlant();
             clearIntervals();
         }
@@ -74,6 +88,7 @@ class Tamapotchi {
             this.sunlight = 10;
         }
         if (this.sunlight === 0) {
+            messages.innerText = "I can't grow without sunshine :("
             clearIntervals();
             deadPlant();
         }
@@ -88,7 +103,12 @@ class Tamapotchi {
         } else if (this.fertilizer > 6) {
             messages.innerText = "Too much plant food!";
         }
-        if (this.fertilizer === 0 || this.fertilizer >= 10) {
+        if (this.fertilizer === 0) {
+            messages.innerText ="Died from starving :(";
+            clearIntervals();
+            deadPlant();
+        } else if(this.fertilizer >= 10) {
+            messages.innerText ="Died from blablabla";
             clearIntervals();
             deadPlant();
         }
@@ -101,7 +121,12 @@ class Tamapotchi {
         if (this.pesticide > 4) {
             messages.innerText = "These bugs are killing me!";
         }
-        if (this.bugging === -2 || this.bugging === 10) {
+        if (this.pesticide === -2) {
+            messages.innerText ="Died from too much chemicals";
+            clearIntervals();
+            deadPlant();
+        } else if(this.pesticide === 10) {
+            messages.innerText ="Bugs ate the whole plant :(";
             clearIntervals();
             deadPlant();
         }
@@ -112,18 +137,19 @@ class Tamapotchi {
         this.grow += 1;
         growDataHTML.innerText = this.grow;
         if (this.grow >= 1 && this.grow <= 5) {
-            sproutGif.style.display = "block";
+            sproutGif.classList.remove("hidden");
         } else if (this.grow >= 6 && this.grow <= 9) {
-            leavesGif.style.display = "block";
+            sproutGif.classList.toggle("hidden");
+            leavesGif.classList.remove("hidden");
         } else if (this.grow === 10) {
-            flowerGif.style.display = "block";
-            butterfly.style.display = "block";
+            flowerGif.classList.toggle("hidden");
+            butterfly.classList.toggle("hidden");
             clearIntervals();
         }
         if (this.grow === 1) {
             messages.innerText = ("Here is the sprout!")
         } else if (this.grow === 6) {
-            messages.innerText = ("It got taller!")
+            messages.innerText = ("It is thriving!")
         }
     };
 
@@ -134,21 +160,21 @@ class Tamapotchi {
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
-        }, 1000);
+        }, 4000);
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 1000);
+        }, 15000);
 
 
         state.sunlightCount = setInterval( () => {
             this.sunlighting()
-        }, 7000);
+        }, 1000);
 
 
         state.fertilizerCount = setInterval( () => {
             this.fertilizing()
-        }, 10000);
+        }, 15000);
 
         state.pesticideCount = setInterval( () => {
             this.bugging()
@@ -180,6 +206,7 @@ const plant = new Tamapotchi();
 // user clicks start to start the game and ncrease/decrease the data
 startButton.addEventListener("click", function (){
     plant.born();
+    //unhide all button(add hidden class) and hide start button
     growDataHTML.innerText = plant.grow;
     waterDataHTML.innerText = plant.water;
     sunlightDataHTML.innerText = plant.sunlight;
@@ -191,26 +218,26 @@ startButton.addEventListener("click", function (){
 
 waterButton.addEventListener("click", function (){
     plant.addingWater();
-    wateringCanGif.style.display = "block";
-    setTimeout("wateringCanGif.style.display='none';", 1750);
+    wateringCanGif.classList.toggle("hidden");
+    setTimeout("wateringCanGif.classList.toggle('hidden')", 1750);
 })
 
 sunlightButton.addEventListener("click", function (){
     plant.addingSunlight();
-    sunGif.style.display = "block";
-    setTimeout("sunGif.style.display='none';", 3000);    
+    sunGif.classList.toggle("hidden");
+    setTimeout("sunGif.classList.toggle('hidden')", 3000);    
 })
 
 fertilizerButton.addEventListener("click", function (){
     plant.addingFertilizer();
-    fertilizerGif.style.display = "block";
-    setTimeout("fertilizerGif.style.display='none';", 2200);    
+    fertilizerGif.classList.toggle("hidden");
+    setTimeout("fertilizerGif.classList.toggle('hidden')", 2200);    
 })
 
 pesticideButton.addEventListener("click", function (){
     plant.killingBugs();
-    pesticideGif.style.display = "block";
-    setTimeout("pesticideGif.style.display='none';", 1500);    
+    pesticideGif.classList.toggle("hidden");
+    setTimeout("pesticideGif.classList.toggle('hidden')", 1500);    
 })
  
 
@@ -221,25 +248,30 @@ function clearIntervals () {
     clearInterval(state.sunlightCount)
     clearInterval(state.fertilizerCount)
     clearInterval(state.pesticideCount)
+    
 } // why born(state.growCount) doesn't work?
 
 function deadPlant () {
-    // blackLayer.style.display = "block";
+    storm.classList.toggle("hidden");
+    blackLayer.classList.toggle("hidden");
     if (plant.grow >= 1 && plant.grow <= 5 ) {
-        sproutGif.style.display = "none";
-        sproutDeadGif.style.display = "block";
-        
+        sproutGif.classList.toggle("hidden");        
+        sproutDeadGif.classList.toggle("hidden");        
     } else if (plant.grow >=6 && plant.grow <= 9 ) {
-        leavesGif.style.display = "none";
-        leavesDeadGif.style.display = "block";
+        leavesGif.classList.toggle("hidden");
+        leavesDeadGif.classList.toggle("hidden");
     } 
-}
+    restartButton.classList.toggle("hidden");
+    restartButton.addEventListener("click", function(){
+        window.location.reload();
+    })
+};
 
 
-
-
-
-
-
+// Questions:
+//1. line 70 not working but other methods work
+//2. line 26
+//3. line 234
+//4. line 248: function not working
 
 

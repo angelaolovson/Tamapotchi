@@ -16,25 +16,29 @@
     </header>
     
     <main>
-      <div class="instruction"> Instruction</div>
+      <div class="instruction">
+        <button id="instructionButton">INSTRUCTION</button>
+        <div id="dropdownContent">Keep the plant alive until Grow = 10<br><br>3 < Water < 8<br>5 < Sunlight<br>3< Fertilizer < 6<br>Pest Infection < 5</div>
+      </div>  
       
       <div class="screenAndDataBox">
         <div class = "screen">
           <div id="window"></div>
           <div id="sky"></div>
-          <div id="sunGif"></div>
+          <div id="sunGif" class="hidden"></div>
           <div id="potGif"></div>
-          <div id="sproutGif"></div>
-          <div id="sproutDeadGif"></div>
-          <div id="leavesGif"></div>
-          <div id="leavesDeadGif"></div>
-          <div id="flowerGif"></div>
-          <div id="wateringCanGif"></div>
-          <div id="pesticideGif"></div>
-          <div id="fertilizerGif"></div>
-          <div id="butterfly"></div>
-          <div id="storm"></div>
-          <div id="blackLayer"></div>
+          <div id="sproutGif" class="hidden"></div>
+          <div id="sproutDeadGif" class="hidden"></div>
+          <div id="leavesGif" class="hidden"></div>
+          <div id="leavesDeadGif" class="hidden"></div>
+          <div id="flowerGif" class="hidden"></div>
+          <div id="wateringCanGif" class="hidden"></div>
+          <div id="pesticideGif" class="hidden"></div>
+          <div id="fertilizerGif" class="hidden"></div>
+          <div id="butterfly" class="hidden"></div>
+          <div id="storm" class="hidden"></div>
+          <div id="blackLayer" class="hidden"></div>
+          <button class="restartButton hidden">RESTART</button>
         </div>
         <div class="dataBox">
           <div class="growingDatas">
@@ -53,7 +57,7 @@
       
       
       <div class = "control">
-        <button id="startButton">START</button>
+        <button id="startButton" data-hover="START">START</button>
         <button id="waterButton">WATER</button>
         <button id="sunlightButton">SUNLIGHT</button>
         <button id="fertilizerButton">FERTILIZER</button>
