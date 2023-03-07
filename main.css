@@ -19,7 +19,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgb(193, 179, 141);
-    /* use padding */
     align-items: center;
     
 }
@@ -27,7 +26,6 @@ body {
 header {
     display: flex;
     justify-content: center;
-    /* border: solid 2px blue; */
     height: 200px;
     padding-top: 120px;
 }
@@ -44,30 +42,27 @@ main {
 
 
 footer {
-    /* flex: 2; */
-    /* border: solid 2px blue; */
     text-align: center;
-    height: 70px;
+    margin-top: 20px;
     padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* border: #7fa480 3px solid; */
 }
 
 
 .screenAndDataBox {
     display: flex;
     flex-direction: column;
-    /* flex: 2; */
-    border: solid 2px red;
+    /* border: solid 2px red; */
     width: 600px;
 }
 .screen {
-    /* display: flex; */
-    border: solid 2px yellow;  
+    /* border: solid 2px yellow;   */
     position: relative;
     height: 460px;
     width: 600px;
     background-color: rgb(193, 179, 141);
     z-index: -20;
-    /* box-shadow: 0 30px 40px rgba(239, 244, 233, 0.9); */
 }
 
 .dataBox {
@@ -99,14 +94,15 @@ ul {
 
 
 .control {
-    border: solid 2px red;
+    /* border: solid 2px red; */
     width: 210px;
-    margin-left: 20px;
+    margin-left: 40px;
+    margin-top: 20px;
 }
 
 .control button{
     padding: 5px;
-    margin: 20px;
+    margin-bottom: 25px;
     background-color: #7fa480;
     border: solid white 3px;
     color: white;
@@ -117,7 +113,7 @@ ul {
 
 .instruction {
     position: relative;
-    border: solid 2px red;
+    /* border: solid 2px red; */
     width: 210px;
     height: 250px;
     margin-right: 40px;
@@ -173,15 +169,11 @@ button:hover{
     background-repeat: no-repeat;
     height: 460px;
     width: 600px;
-    border: blue 2px solid;
-    /* position: absolute; */
-    /* top: 20px;
-    left: 30px; */
+    /* border: blue 2px solid; */
 }
 
 #sky {
     background: url(./images/sky-cropped.jpeg);
-    /* background-size: contain; */
     background-repeat: no-repeat;
     height: 480px;
     width: 600px;
@@ -355,16 +347,14 @@ button:hover{
 
 #restartButton {
     position: absolute;
-    top: 150px;
-    left: 150px;
-    height: 100px;
-    width: 300px;
+    top: 400px;
+    left: 40%;
+    height: 10%;
+    width: 20%;
     text-align: center;
     font-size: 40px;
-    z-index: 30;
+    z-index: 50;
 }
-
-
 
 
 

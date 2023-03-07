@@ -20,7 +20,7 @@
         <button id="instructionButton">INSTRUCTION</button>
         <div id="dropdownContent">Keep the plant alive until Grow = 10<br><br>3 < Water < 8<br>5 < Sunlight<br>3< Fertilizer < 6<br>Pest Infection < 5</div>
       </div>  
-      
+      <button id="restartButton" class="hidden">RESTART</button>
       <div class="screenAndDataBox">
         <div class = "screen">
           <div id="window"></div>
@@ -38,7 +38,6 @@
           <div id="butterfly" class="hidden"></div>
           <div id="storm" class="hidden"></div>
           <div id="blackLayer" class="hidden"></div>
-          <button class="restartButton hidden">RESTART</button>
         </div>
         <div class="dataBox">
           <div class="growingDatas">
@@ -57,11 +56,11 @@
       
       
       <div class = "control">
-        <button id="startButton" data-hover="START">START</button>
-        <button id="waterButton">WATER</button>
-        <button id="sunlightButton">SUNLIGHT</button>
-        <button id="fertilizerButton">FERTILIZER</button>
-        <button id="pesticideButton">PESTICIDE</button>
+        <button id="startButton">START</button>
+        <button id="waterButton" class="hidden">WATER</button>
+        <button id="sunlightButton" class="hidden">SUNLIGHT</button>
+        <button id="fertilizerButton" class="hidden">FERTILIZER</button>
+        <button id="pesticideButton" class="hidden">PESTICIDE</button>
         <!-- <button id="cutButton">CUT</button> -->
       </div>
     </main>

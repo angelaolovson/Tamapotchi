@@ -22,9 +22,7 @@ const waterButton = document.getElementById("waterButton");
 const sunlightButton = document.getElementById("sunlightButton");
 const fertilizerButton = document.getElementById("fertilizerButton");
 const pesticideButton = document.getElementById("pesticideButton");
-const restartButton = document.getElementsByClassName("restartButton");
-// trouble with using getelementsbyclassname to get elemnt
-
+const restartButton = document.getElementById("restartButton");
 
 // Gifs
 const sproutGif = document.getElementById("sproutGif")
@@ -69,15 +67,15 @@ class Tamapotchi {
         }
         if (this.water === 0) {
             messages.innerText ="Died from thirsty :("
-            deadPlant();
+            //if the order is oppsite for the 2 functions below - causing not stopping setInvtervals
             clearIntervals();
+            deadPlant();
         } else if(this.water >= 10) {
             messages.innerText ="Died from rotten roots :("
-            deadPlant();
             clearIntervals();
+            deadPlant();
         }
     };
-    
 
     sunlighting () {
         this.sunlight -= 1;
@@ -94,7 +92,6 @@ class Tamapotchi {
         }
     };
 
-
     fertilizing () {
         this.fertilizer -= 1;
         fertilizerDataHTML.innerText = this.fertilizer;
@@ -108,12 +105,11 @@ class Tamapotchi {
             clearIntervals();
             deadPlant();
         } else if(this.fertilizer >= 10) {
-            messages.innerText ="Died from blablabla";
+            messages.innerText ="Died from over fertilization :(";
             clearIntervals();
             deadPlant();
         }
     };
-
 
     bugging () {
         this.pesticide += 1;
@@ -131,7 +127,6 @@ class Tamapotchi {
             deadPlant();
         }
     };
-    
 
     growing () {
         this.grow += 1;
@@ -139,7 +134,7 @@ class Tamapotchi {
         if (this.grow >= 1 && this.grow <= 5) {
             sproutGif.classList.remove("hidden");
         } else if (this.grow >= 6 && this.grow <= 9) {
-            sproutGif.classList.toggle("hidden");
+            sproutGif.classList.add("hidden");
             leavesGif.classList.remove("hidden");
         } else if (this.grow === 10) {
             flowerGif.classList.toggle("hidden");
@@ -150,9 +145,10 @@ class Tamapotchi {
             messages.innerText = ("Here is the sprout!")
         } else if (this.grow === 6) {
             messages.innerText = ("It is thriving!")
+        } else if (this.grow === 10) {
+            messages.innerText = "Nice blooms!"
         }
     };
-
 
     born () {
         messages.innerText = ("A secret seed has been planted and waiting for sprouting!");
@@ -160,17 +156,15 @@ class Tamapotchi {
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
-        }, 4000);
+        }, 1000);
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 15000);
-
+        }, 1000);
 
         state.sunlightCount = setInterval( () => {
             this.sunlighting()
-        }, 1000);
-
+        }, 15000);
 
         state.fertilizerCount = setInterval( () => {
             this.fertilizing()
@@ -181,20 +175,16 @@ class Tamapotchi {
         }, 15000);
     }
 
-
     // interacting functions
     addingWater () {
         this.water = this.water + 2; 
     }
-
     addingSunlight () {
         this.sunlight = this.sunlight + 4; 
     }
-
     addingFertilizer () {
         this.fertilizer = this.fertilizer + 3; 
     }
-
     killingBugs () {
         this.pesticide = this.pesticide - 3; 
     }
@@ -203,18 +193,20 @@ class Tamapotchi {
 
 const plant = new Tamapotchi();
 
-// user clicks start to start the game and ncrease/decrease the data
+// user clicks start to start the game and increase/decrease the data
 startButton.addEventListener("click", function (){
     plant.born();
-    //unhide all button(add hidden class) and hide start button
     growDataHTML.innerText = plant.grow;
     waterDataHTML.innerText = plant.water;
     sunlightDataHTML.innerText = plant.sunlight;
     fertilizerDataHTML.innerText = plant.fertilizer;
     pesticideDataHTML.innerText = plant.pesticide;  
+    startButton.classList.add("hidden")
+    waterButton.classList.toggle("hidden")
+    sunlightButton.classList.toggle("hidden")
+    fertilizerButton.classList.toggle("hidden")
+    pesticideButton.classList.toggle("hidden")
 })
-
-
 
 waterButton.addEventListener("click", function (){
     plant.addingWater();
@@ -248,7 +240,6 @@ function clearIntervals () {
     clearInterval(state.sunlightCount)
     clearInterval(state.fertilizerCount)
     clearInterval(state.pesticideCount)
-    
 } // why born(state.growCount) doesn't work?
 
 function deadPlant () {
@@ -258,20 +249,14 @@ function deadPlant () {
         sproutGif.classList.toggle("hidden");        
         sproutDeadGif.classList.toggle("hidden");        
     } else if (plant.grow >=6 && plant.grow <= 9 ) {
-        leavesGif.classList.toggle("hidden");
         leavesDeadGif.classList.toggle("hidden");
+        leavesGif.classList.add("hidden");
     } 
     restartButton.classList.toggle("hidden");
-    restartButton.addEventListener("click", function(){
-        window.location.reload();
-    })
+    document.addEventListener("click",function(){
+            window.location.reload();
+        })
 };
 
-
-// Questions:
-//1. line 70 not working but other methods work
-//2. line 26
-//3. line 234
-//4. line 248: function not working
 
 
