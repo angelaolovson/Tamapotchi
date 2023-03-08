@@ -70,10 +70,12 @@ class Tamapotchi {
             //if the order is oppsite for the 2 functions below - causing not stopping setInvtervals
             clearIntervals();
             deadPlant();
+            restart();
         } else if(this.water >= 10) {
             messages.innerText ="Died from rotten roots :("
             clearIntervals();
             deadPlant();
+            restart();
         }
     };
 
@@ -89,6 +91,7 @@ class Tamapotchi {
             messages.innerText = "I can't grow without sunshine :("
             clearIntervals();
             deadPlant();
+            restart();
         }
     };
 
@@ -104,10 +107,12 @@ class Tamapotchi {
             messages.innerText ="Died from starving :(";
             clearIntervals();
             deadPlant();
+            restart();
         } else if(this.fertilizer >= 10) {
             messages.innerText ="Died from over fertilization :(";
             clearIntervals();
             deadPlant();
+            restart();
         }
     };
 
@@ -121,10 +126,12 @@ class Tamapotchi {
             messages.innerText ="Died from too much chemicals";
             clearIntervals();
             deadPlant();
+            restart();
         } else if(this.pesticide === 10) {
             messages.innerText ="Bugs ate the whole plant :(";
             clearIntervals();
             deadPlant();
+            restart();
         }
     };
 
@@ -140,6 +147,7 @@ class Tamapotchi {
             flowerGif.classList.toggle("hidden");
             butterfly.classList.toggle("hidden");
             clearIntervals();
+            restart();
         }
         if (this.grow === 1) {
             messages.innerText = ("Here is the sprout!")
@@ -178,15 +186,19 @@ class Tamapotchi {
     // interacting functions
     addingWater () {
         this.water = this.water + 2; 
+        waterDataHTML.innerText = this.water;
     }
     addingSunlight () {
-        this.sunlight = this.sunlight + 4; 
+        this.sunlight = this.sunlight + 4;
+        sunlightDataHTML.innerText = this.sunlight; 
     }
     addingFertilizer () {
         this.fertilizer = this.fertilizer + 3; 
+        fertilizerDataHTML.innerText = this.fertilizer;
     }
     killingBugs () {
         this.pesticide = this.pesticide - 3; 
+        pesticideDataHTML.innerText = this.pesticide;
     }
 }
 
@@ -252,11 +264,12 @@ function deadPlant () {
         leavesDeadGif.classList.toggle("hidden");
         leavesGif.classList.add("hidden");
     } 
+};
+
+function restart () {
     restartButton.classList.toggle("hidden");
     document.addEventListener("click",function(){
             window.location.reload();
         })
-};
-
-
+}
 

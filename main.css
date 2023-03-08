@@ -98,17 +98,87 @@ ul {
     width: 210px;
     margin-left: 40px;
     margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .control button{
-    padding: 5px;
+    /* padding: 5px; */
     margin-bottom: 25px;
     background-color: #7fa480;
     border: solid white 3px;
     color: white;
-    border-radius: 10px;
-    display: block;
-    
+    border-radius: 50%;
+    height: fit-content;
+    width: fit-content;
+}
+
+#startButton {
+    background-image: url(./images/icon/buttonIcon-08.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 75px;
+}
+
+#waterButton {
+    background-image: url(./images/icon/buttonIcon-02.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -1px;
+    height: 75px;
+    width: 75px;
+}
+
+#sunlightButton {
+    background-image: url(./images/icon/buttonIcon-06.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 75px;
+}
+
+#fertilizerButton {
+    background-image: url(./images/icon/buttonIcon-03.png);
+    background-size: 65px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0%;
+    height: 75px;
+    width: 75px;
+}
+
+#pesticideButton {
+    background-image: url(./images/icon/buttonIcon-05.png);
+    background-size: 65px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 75px;
+}
+
+#restartButton {
+    position: absolute;
+    top: 400px;
+    left: 40%;
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    font-size: 40px;
+    z-index: 50;
+    color: white;
+    background-color: #7fa480;
+    border: white 3px solid;
+}
+
+#restartButton:hover,#instructionButton:hover {
+    color: #7fa480;
+    background-color: white;
+    border:#7fa480 3px solid;
 }
 
 .instruction {
@@ -131,6 +201,7 @@ ul {
     font-size: 20px;
     position: absolute;
     right: 0px;
+    z-index: 5;
 }
 button:hover{
     background-color: white;
@@ -345,16 +416,7 @@ button:hover{
     display: none;
 }
 
-#restartButton {
-    position: absolute;
-    top: 400px;
-    left: 40%;
-    height: 10%;
-    width: 20%;
-    text-align: center;
-    font-size: 40px;
-    z-index: 50;
-}
+
 
 
 
