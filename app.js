@@ -38,13 +38,13 @@ const butterfly = document.getElementById("butterfly")
 const storm = document.getElementById("storm")
 const blackLayer = document.getElementById("blackLayer")
 
-// //User's name
-// let userName = prompt("Please enter your name", "Your Name")
-// if(userName != null) {
-//     messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
-// } else {
-//     messages.innerText = "Hi stranger! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
-// }
+//User's name
+let userName = prompt("Please enter your name", "Your Name")
+if(userName != null) {
+    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
+} else {
+    messages.innerText = "Hi stranger! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
+}
 
 // Starting data & rules
 class Tamapotchi {
@@ -147,7 +147,7 @@ class Tamapotchi {
             flowerGif.classList.toggle("hidden");
             butterfly.classList.toggle("hidden");
             clearIntervals();
-            restart();
+            // restart();
         }
         if (this.grow === 1) {
             messages.innerText = ("Here is the sprout!")
@@ -164,23 +164,23 @@ class Tamapotchi {
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
-        }, 1000);
+        }, 15000);
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 1000);
+        }, 10000);
 
         state.sunlightCount = setInterval( () => {
             this.sunlighting()
-        }, 15000);
+        }, 13000);
 
         state.fertilizerCount = setInterval( () => {
             this.fertilizing()
-        }, 15000);
+        }, 18000);
 
         state.pesticideCount = setInterval( () => {
             this.bugging()
-        }, 15000);
+        }, 20000);
     }
 
     // interacting functions

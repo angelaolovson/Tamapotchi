@@ -12,15 +12,21 @@
   </head>
   <body>
     <header>
-      <h1>TAMAPOTCHI</h1>
+      <!-- <h1><img src="./images/Logo.png" width="500"></h1> -->
     </header>
     
     <main>
+
+
       <div class="instruction">
-        <button id="instructionButton">INSTRUCTION</button>
+        <button id="instructionButton" data-hover="INSTRUCTION"></button>
         <div id="dropdownContent">Keep the plant alive until Grow = 10<br><br>3 < Water < 8<br>5 < Sunlight<br>3< Fertilizer < 6<br>Pest Infection < 5</div>
       </div>  
+
+
       <button id="restartButton" class="hidden">RESTART</button>
+
+
       <div class="screenAndDataBox">
         <div class = "screen">
           <div id="window"></div>
@@ -51,22 +57,19 @@
           </div>
           <div id="messages"></div>
         </div>
-        
       </div> 
       
-      
       <div class = "control">
-        <button id="startButton">START</button>
-        <button id="waterButton" class="hidden">WATER</button>
-        <button id="sunlightButton" class="hidden">SUNLIGHT</button>
-        <button id="fertilizerButton" class="hidden">FERTILIZER</button>
-        <button id="pesticideButton" class="hidden">PESTICIDE</button>
+        <button id="startButton" data-hover="START"></button>
+        <button id="waterButton" data-hover="WATER +2" class="hidden"></button>
+        <button id="sunlightButton" data-hover="SUNLIGHT +4" class="hidden"></button>
+        <button id="fertilizerButton" data-hover="FERTILIZER +3" class="hidden"></button>
+        <button id="pesticideButton" data-hover="PESTICIDE -3" class="hidden"></button>
         <!-- <button id="cutButton">CUT</button> -->
       </div>
     </main>
 
      
-    
     <footer>My Application copyright 2023 Angela Olovson</footer>
   </body>
 </html>

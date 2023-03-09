@@ -24,10 +24,12 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    height: 200px;
-    padding-top: 120px;
+    height: 180px;
+    width: 500px;
+    background-image: url(./images/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 main {
@@ -67,29 +69,28 @@ footer {
 
 .dataBox {
     display: flex;
-    height: 175px;
+    height: fit-content;
     font-size: 24px;
 }
 
 .dataBox .growingDatas {
     width: 40%;
-    border: solid 2px #dbf2dc;
-    background-color: #7fa480;
+    border: double 5px rgb(111, 100, 66);
     margin: 5px;
-    padding-left: 5px;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(213, 205, 180);
 }
 
 .dataBox #messages {
-    border: solid 2px #dbf2dc;
-    background-color: #7fa480;
+    border: double 5px rgb(111, 100, 66);
     width: 60%;
     margin: 5px;
-    padding-left: 5px;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(213, 205, 180);
 }
 
 ul {
     list-style: none;
-    padding: 5px;
 }
 
 
@@ -103,8 +104,9 @@ ul {
     flex-direction: column;
 }
 
+
+/* BUTTONS */
 .control button{
-    /* padding: 5px; */
     margin-bottom: 25px;
     background-color: #7fa480;
     border: solid white 3px;
@@ -114,6 +116,14 @@ ul {
     width: fit-content;
 }
 
+button:hover{
+    background-color: white;
+    color: #7fa480;
+    border: #7fa480 solid 3px;
+    box-shadow: 0px 0px 25px white;
+}
+
+
 #startButton {
     background-image: url(./images/icon/buttonIcon-08.png);
     background-size: 60px;
@@ -121,6 +131,18 @@ ul {
     background-position: center;
     height: 75px;
     width: 75px;
+}
+#startButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: -10px;
+    left: 70px;
+    color: black;
+    font-size: 24px;
+}
+#startButton:hover:before{
+    visibility: visible;
 }
 
 #waterButton {
@@ -132,6 +154,18 @@ ul {
     height: 75px;
     width: 75px;
 }
+#waterButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: -10px;
+    left: 70px;
+    color: black;
+    font-size: 24px;
+}
+#waterButton:hover:before{
+    visibility: visible;
+}
 
 #sunlightButton {
     background-image: url(./images/icon/buttonIcon-06.png);
@@ -140,6 +174,18 @@ ul {
     background-position: center;
     height: 75px;
     width: 75px;
+}
+#sunlightButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    color: black;
+    font-size: 24px;
+}
+#sunlightButton:hover:before{
+    visibility: visible;
 }
 
 #fertilizerButton {
@@ -151,6 +197,18 @@ ul {
     height: 75px;
     width: 75px;
 }
+#fertilizerButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: 190px;
+    left: 70px;
+    color: black;
+    font-size: 24px;
+}
+#fertilizerButton:hover:before{
+    visibility: visible;
+}
 
 #pesticideButton {
     background-image: url(./images/icon/buttonIcon-05.png);
@@ -160,6 +218,21 @@ ul {
     height: 75px;
     width: 75px;
 }
+#pesticideButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: 290px;
+    left: 70px;
+    color: black;
+    font-size: 24px;
+}
+#pesticideButton:hover:before{
+    visibility: visible;
+}
+
+
+
 
 #restartButton {
     position: absolute;
@@ -181,6 +254,7 @@ ul {
     border:#7fa480 3px solid;
 }
 
+
 .instruction {
     position: relative;
     /* border: solid 2px red; */
@@ -192,30 +266,41 @@ ul {
 }
 
 #instructionButton {
-    padding: 5px;
-    text-align: center;
     background-color: #7fa480;
     border: solid white 3px;
     color: white;
-    border-radius: 10px;
-    font-size: 20px;
+    border-radius: 50px;
     position: absolute;
-    right: 0px;
+    right: 5px;
     z-index: 5;
+    background-image: url(./images/icon/buttonIcon-04.png);
+    background-size: 65px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 75px;
 }
-button:hover{
-    background-color: white;
-    color: #7fa480;
-    border: #7fa480 solid 3px;
+#instructionButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: -10px;
+    left: -105px;
+    color: black;
+    font-size: 24px;
 }
+#instructionButton:hover:before{
+    visibility: visible;
+}
+
+
 
 #dropdownContent {
     width: 230px;
     height: 200px;
-    top: 38px;
+    top: 76px;
     right: 0px;
     position: absolute;
-    z-index: 1;
     border: solid white 3px;
     background-color: #7fa480;
     opacity: .8;
@@ -227,13 +312,9 @@ button:hover{
     display: block;
 }
 
-/* why I have to use id to display below? */
-/* #instructionButton:hover{
-    background-color: white;
-    color: #7fa480;
-    border: #7fa480 solid 3px;
-} */
 
+
+/* GIFS */
 #window{
     background: url(./images/screenwithoutbackground_v3.gif);
     background-size: contain;
