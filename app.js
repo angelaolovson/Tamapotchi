@@ -42,10 +42,10 @@ const blackLayer = document.getElementById("blackLayer")
 //User's name
 let userName = prompt("Please enter your name", )
 if(userName != null) {
-    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start on the top right to start the game and you can find how to keep the plant alive in the Instruction on the top left!";
+    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start(top right) to start and Instruction(top left). Once click on start, wait on messages poping on HERE, follow them by clicking on the buttons(right) to keep your plant alive!";
     messages.classList.toggle("hidden");
 } else {
-    messages.innerText = "Hi stranger! Ready to plant a seed? Click Start on the top right to start the game and you can find how to keep the plant alive in the Instruction on the top left!";
+    messages.innerText = "Hi stranger! Ready to plant a seed? Click Start(top right) to start and Instruction(top left). Once click on start, wait on messages poping on HERE, follow them by clicking on the buttons(right) to keep your plant alive!";
     messages.classList.toggle("hidden");
 }
 
