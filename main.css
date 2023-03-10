@@ -22,13 +22,14 @@ body {
     align-items: center;
 }
 
-header {
+header{
     height: 135px;
     width: 500px;
     background-image: url(./images/Logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
+    position: relative;
 }
 
 main {
@@ -45,6 +46,9 @@ footer {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+
 
 
 .screenAndDataBox {
@@ -508,8 +512,6 @@ button:hover{
 .hidden {
     display: none;
 }
-
-
 
 
 

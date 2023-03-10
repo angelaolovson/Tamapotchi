@@ -24,6 +24,8 @@ const fertilizerButton = document.getElementById("fertilizerButton");
 const pesticideButton = document.getElementById("pesticideButton");
 const restartButton = document.getElementById("restartButton");
 const replayButton = document.getElementById("replayButton");
+const musicButton = document.getElementById("musicButton");
+const audio = document.querySelector("audio")
 
 // Gifs
 const sproutGif = document.getElementById("sproutGif")
