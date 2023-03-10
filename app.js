@@ -63,7 +63,7 @@ class Tamapotchi {
     watering() {
         this.water -= 1;
         waterDataHTML.innerText = this.water;
-        if (this.water < 4 && this.water >= 1) {
+        if (this.water < 4 && this.water > 0) {
             messages.innerText = "Water meee!"
             messages.classList.toggle("hidden")
             setTimeout("messages.classList.toggle('hidden')", 1500);
@@ -91,7 +91,7 @@ class Tamapotchi {
     sunlighting () {
         this.sunlight -= 1;
         sunlightDataHTML.innerText = this.sunlight;
-        if (this.sunlight < 6 && this.sunlight >= 1) {
+        if (this.sunlight < 6 && this.sunlight > 0) {
             messages.innerText = "Need a sunbath :)";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 1500);
@@ -108,7 +108,7 @@ class Tamapotchi {
     fertilizing () {
         this.fertilizer -= 1;
         fertilizerDataHTML.innerText = this.fertilizer;
-        if (this.fertilizer < 4 && this.fertilizer >= 1) {
+        if (this.fertilizer < 4 && this.fertilizer > 0) {
             messages.innerText = "Want some plant food!";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 1500);
@@ -135,7 +135,7 @@ class Tamapotchi {
     bugging () {
         this.pesticide += 1;
         pesticideDataHTML.innerText = this.pesticide;
-        if (this.pesticide > 4 && this.pesticide <= 9) {
+        if (this.pesticide > 4 && this.pesticide < 10) {
             messages.innerText = "These bugs are killing me!";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 1500);
