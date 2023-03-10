@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    height: 180px;
+    height: 135px;
     width: 500px;
     background-image: url(./images/Logo.png);
     background-size: contain;
@@ -42,24 +42,18 @@ main {
     font-size: 20px;
 }
 
-
 footer {
     text-align: center;
-    margin-top: 20px;
-    padding: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* border: #7fa480 3px solid; */
 }
 
 
 .screenAndDataBox {
     display: flex;
     flex-direction: column;
-    /* border: solid 2px red; */
     width: 600px;
 }
 .screen {
-    /* border: solid 2px yellow;   */
     position: relative;
     height: 460px;
     width: 600px;
@@ -95,7 +89,6 @@ ul {
 
 
 .control {
-    /* border: solid 2px red; */
     width: 210px;
     margin-left: 40px;
     margin-top: 20px;
@@ -278,7 +271,6 @@ button:hover{
 
 .instruction {
     position: relative;
-    /* border: solid 2px red; */
     width: 210px;
     height: 500px;
     margin-right: 40px;
@@ -342,7 +334,6 @@ button:hover{
     background-repeat: no-repeat;
     height: 460px;
     width: 600px;
-    /* border: blue 2px solid; */
 }
 
 #sky {

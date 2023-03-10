@@ -63,7 +63,7 @@ class Tamapotchi {
     watering() {
         this.water -= 1;
         waterDataHTML.innerText = this.water;
-        if (this.water <= 3 && this.water >= 1) {
+        if (this.water < 4 && this.water >= 1) {
             messages.innerText = "Water meee!"
             messages.classList.toggle("hidden")
             setTimeout("messages.classList.toggle('hidden')", 2000);
