@@ -3,43 +3,52 @@ Grow a flower from a pot. Keep it growing until level 10 to bloom by watering pr
 
 
 ## Wireframe
-![readme-wireframe](https://user-images.githubusercontent.com/122236820/221720575-6fee663e-ac76-4c84-a4ba-d77ee366c942.png)
+![project1](./images/wireframe_screenshot.png)
 
 
 ## Steps
-1. Click Start to start the game and give starting data
+1. Type in your name.
+2. Click Start(top right icon) to start the game and give starting data.
    - Starting data
-     - GROW : 0 
-     - WATER : 6 
-     - SUNLIGHT : 5 
-     - FERTILIZER : 5 
-     - PESTICIDE : 1 
-2. Following the plant’s needs from the message and keep it alive until the grow data increases from 0 to 10.
+     - GROW : 0 (increasing over the time)
+     - WATER : 7 (decreasing over the time)
+     - SUNLIGHT : 7 (decreasing over the time) 
+     - FERTILIZER : 6 (decreasing over the time)
+     - PESTICIDE : 0 (increasing over the time)
+3. Find the instruction on the top left icon
+4. Follow the plant’s needs from the message box and keep it alive until the grow data increases from 0 to 10.
+5. Click on restart button to play again no matter win or loss. 
+
 
 ## Rules
-4 <= Water <= 8, decreasing over the time
-- onclick Water +2
-- Water <= 3, water me
-- Water >= 9, too much water!
-- Water <= 0 || Water>=10 => dead: lose the game 
+Best to keep data in the ranges below:
+- 3 <= Water <= 8
+- 5 <= Sunlight <= 10
+- 3 <= Fertilizer <= 6
+- 0 <= Pesticide <= 4
 
-3<= Fertilizer <= 6, decreasing over the time
-- onclick Fertilizer +3
-- Fertilizer <=2, feed me
-- Fertilizer >= 7, too much fertilizer!
-- Fertilizer <= 0 || Fertilizer >= 10 => dead: lose the game
+Click on buttons to increase/decrease data:
+- Water +2
+- Sunlight +4
+- Fertilizer +3
+- Pesticide -3
 
-0 <= Pesticide <= 4, increasing over the time
-- onclick Pesticide -3
-- Pesticide >=5, kill the bugs!
-- Pesticide >= 10 => dead: lose the game (set if Pesticide < 0 => Pesticide = 0)
+The plant will give an alert message if data is not enough or too much: 
+- Water <= 3, Water meee!
+- Water >= 9, Too much water!!!
+- Sunlight < 5, Need a sunbath :)
+- Fertilizer <= 2, Want some plant food!
+- Fertilizer >= 7, Too much plant food!
+- Pesticide >= 5, These bugs are killing me!
 
-5 <= Sunlight <= 10, decreasing over the time
-- onclick Sunlight +4
-- Sunlight < 5, give me some sunshine!
-- Sunlight <= 0 => dead: lose the game (set if Sunlight > 10 => Sunlight = 10)
+You will lost the game if following happens:
+- Water = 0 or Water>=10 
+- Sunlight = 0
+- Fertilizer = 0 or Fertilizer >= 10
+- Pesticide < -2 or Pesticide = 10
+(Too much or not enough will kill the plant)
 
-If Grow = 10, win the game!
+Keep it alive until Grow = 10, get blooms and win the game!
 
 
 ## MVP GOALS

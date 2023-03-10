@@ -145,6 +145,27 @@ button:hover{
     visibility: visible;
 }
 
+#replayButton {
+    background-image: url(./images/icon/buttonIcon-08.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75px;
+    width: 75px;
+}
+#replayButton:before{
+    content: attr(data-hover);
+    visibility: hidden;
+    position: absolute;
+    top: -10px;
+    left: 70px;
+    color: black;
+    font-size: 24px;
+}
+#replayButton:hover:before{
+    visibility: visible;
+}
+
 #waterButton {
     background-image: url(./images/icon/buttonIcon-02.png);
     background-size: contain;
@@ -259,7 +280,7 @@ button:hover{
     position: relative;
     /* border: solid 2px red; */
     width: 210px;
-    height: 250px;
+    height: 500px;
     margin-right: 40px;
     margin-top: 20px;
     display: inline-block;
@@ -297,7 +318,7 @@ button:hover{
 
 #dropdownContent {
     width: 230px;
-    height: 200px;
+    height: fit-content;
     top: 76px;
     right: 0px;
     position: absolute;

@@ -23,6 +23,7 @@ const sunlightButton = document.getElementById("sunlightButton");
 const fertilizerButton = document.getElementById("fertilizerButton");
 const pesticideButton = document.getElementById("pesticideButton");
 const restartButton = document.getElementById("restartButton");
+const replayButton = document.getElementById("replayButton");
 
 // Gifs
 const sproutGif = document.getElementById("sproutGif")
@@ -41,20 +42,20 @@ const blackLayer = document.getElementById("blackLayer")
 //User's name
 let userName = prompt("Please enter your name", )
 if(userName != null) {
-    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
+    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start on the top right to start the game and you can find how to keep the plant alive in the Instruction on the top left!";
     messages.classList.toggle("hidden");
 } else {
-    messages.innerText = "Hi stranger! Ready to plant a seed? Click START to start the game and you can find how to keep the plant alive in the Instruction!";
+    messages.innerText = "Hi stranger! Ready to plant a seed? Click Start on the top right to start the game and you can find how to keep the plant alive in the Instruction on the top left!";
     messages.classList.toggle("hidden");
 }
 
 // Starting data & rules
 class Tamapotchi {
     constructor () {
-    this.grow = 8,
-    this.water= 2,
+    this.grow = 0,
+    this.water= 7,
     this.sunlight= 7,
-    this.fertilizer= 7,
+    this.fertilizer= 6,
     this.pesticide= 0
     }
 
@@ -62,23 +63,23 @@ class Tamapotchi {
     watering() {
         this.water -= 1;
         waterDataHTML.innerText = this.water;
-        if (this.water <= 3) {
+        if (this.water <= 3 && this.water >= 1) {
             messages.innerText = "Water meee!"
             messages.classList.toggle("hidden")
             setTimeout("messages.classList.toggle('hidden')", 2000);
-        } else if(this.water >= 8) {
+        } else if(this.water === 8 && this.water === 9) {
             messages.innerText ="Too much water!!!";
             messages.classList.toggle("hidden")
             setTimeout("messages.classList.toggle('hidden')", 2000);
         }
-        if (this.water === 0) {
-            messages.classList.toggle("hidden");
+        if (this.water === 0) {            
             messages.innerText ="Died from thirsty :(";
+            messages.classList.toggle("hidden");
             //if the order is oppsite for the 2 functions below - causing not stopping setInvtervals
             clearIntervals();
             deadPlant();
             restart();
-        } else if(this.water > 10) {
+        } else if(this.water >= 10) {
             messages.innerText ="Died from rotten roots :(";
             messages.classList.toggle("hidden");
             clearIntervals();
@@ -90,7 +91,7 @@ class Tamapotchi {
     sunlighting () {
         this.sunlight -= 1;
         sunlightDataHTML.innerText = this.sunlight;
-        if (this.sunlight < 5) {
+        if (this.sunlight < 5 && this.sunlight >= 1) {
             messages.innerText = "Need a sunbath :)";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 2000);
@@ -107,11 +108,11 @@ class Tamapotchi {
     fertilizing () {
         this.fertilizer -= 1;
         fertilizerDataHTML.innerText = this.fertilizer;
-        if (this.fertilizer < 3) {
+        if (this.fertilizer < 3 && this.fertilizer >= 1) {
             messages.innerText = "Want some plant food!";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 2000);
-        } else if (this.fertilizer > 6) {
+        } else if (this.fertilizer > 6 && this.fertilizer <= 9) {
             messages.innerText = "Too much plant food!";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 2000);
@@ -134,7 +135,7 @@ class Tamapotchi {
     bugging () {
         this.pesticide += 1;
         pesticideDataHTML.innerText = this.pesticide;
-        if (this.pesticide > 4) {
+        if (this.pesticide > 4 && this.pesticide <= 9) {
             messages.innerText = "These bugs are killing me!";
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 2000);
@@ -170,7 +171,7 @@ class Tamapotchi {
             sunlightButton.classList.toggle("hidden")
             fertilizerButton.classList.toggle("hidden")
             pesticideButton.classList.toggle("hidden")
-            restart();
+            replay();
         }
         if (this.grow === 1) {
             messages.innerText = ("Here is the sprout!");
@@ -181,25 +182,23 @@ class Tamapotchi {
             messages.classList.toggle("hidden");
             setTimeout("messages.classList.toggle('hidden')", 3000);
         } else if (this.grow === 10) {
-            messages.innerText = "Nice blooms!"
+            messages.innerText = "Great job! Nice blooms! Enjoy it :)"
             messages.classList.toggle("hidden");
         }
     };
 
     born () {
         messages.innerText = ("A secret seed has been planted and waiting for sprouting!");
-        messages.classList.toggle("hidden");
-        messages.classList.toggle("hidden");
         setTimeout("messages.classList.toggle('hidden')", 3000);
                 
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
             this.growing()
-        }, 10000);
+        }, 15000);
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 8000);
+        }, 9000);
 
         state.sunlightCount = setInterval( () => {
             this.sunlighting()
@@ -211,7 +210,7 @@ class Tamapotchi {
 
         state.pesticideCount = setInterval( () => {
             this.bugging()
-        }, 20000);
+        }, 22000);
     }
 
     // interacting functions
@@ -311,3 +310,9 @@ function restart () {
         })
 }
 
+function replay () {
+    replayButton.classList.toggle("hidden");
+    replayButton.addEventListener("click",function(){
+            window.location.reload();
+        })
+}
