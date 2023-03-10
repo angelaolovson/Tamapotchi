@@ -66,11 +66,11 @@ class Tamapotchi {
         if (this.water < 4 && this.water >= 1) {
             messages.innerText = "Water meee!"
             messages.classList.toggle("hidden")
-            setTimeout("messages.classList.toggle('hidden')", 2000);
+            setTimeout("messages.classList.toggle('hidden')", 1500);
         } else if(this.water === 8 && this.water === 9) {
             messages.innerText ="Too much water!!!";
             messages.classList.toggle("hidden")
-            setTimeout("messages.classList.toggle('hidden')", 2000);
+            setTimeout("messages.classList.toggle('hidden')", 1500);
         }
         if (this.water === 0) {            
             messages.innerText ="Died from thirsty :(";
@@ -91,10 +91,10 @@ class Tamapotchi {
     sunlighting () {
         this.sunlight -= 1;
         sunlightDataHTML.innerText = this.sunlight;
-        if (this.sunlight < 5 && this.sunlight >= 1) {
+        if (this.sunlight < 6 && this.sunlight >= 1) {
             messages.innerText = "Need a sunbath :)";
             messages.classList.toggle("hidden");
-            setTimeout("messages.classList.toggle('hidden')", 2000);
+            setTimeout("messages.classList.toggle('hidden')", 1500);
         }
         if (this.sunlight === 0) {
             messages.innerText = "I can't grow without sunshine :(";
@@ -108,14 +108,14 @@ class Tamapotchi {
     fertilizing () {
         this.fertilizer -= 1;
         fertilizerDataHTML.innerText = this.fertilizer;
-        if (this.fertilizer < 3 && this.fertilizer >= 1) {
+        if (this.fertilizer < 4 && this.fertilizer >= 1) {
             messages.innerText = "Want some plant food!";
             messages.classList.toggle("hidden");
-            setTimeout("messages.classList.toggle('hidden')", 2000);
-        } else if (this.fertilizer > 6 && this.fertilizer <= 9) {
+            setTimeout("messages.classList.toggle('hidden')", 1500);
+        } else if (this.fertilizer > 7 && this.fertilizer <= 9) {
             messages.innerText = "Too much plant food!";
             messages.classList.toggle("hidden");
-            setTimeout("messages.classList.toggle('hidden')", 2000);
+            setTimeout("messages.classList.toggle('hidden')", 1500);
         }
         if (this.fertilizer === 0) {
             messages.innerText ="Died from starving :(";
@@ -123,7 +123,7 @@ class Tamapotchi {
             clearIntervals();
             deadPlant();
             restart();
-        } else if(this.fertilizer >= 10) {
+        } else if(this.fertilizer > 10) {
             messages.innerText ="Died from over fertilization :(";
             messages.classList.toggle("hidden");
             clearIntervals();
@@ -138,7 +138,7 @@ class Tamapotchi {
         if (this.pesticide > 4 && this.pesticide <= 9) {
             messages.innerText = "These bugs are killing me!";
             messages.classList.toggle("hidden");
-            setTimeout("messages.classList.toggle('hidden')", 2000);
+            setTimeout("messages.classList.toggle('hidden')", 1500);
         }
         if (this.pesticide === -2) {
             messages.innerText ="Died from too much chemicals";
@@ -206,7 +206,7 @@ class Tamapotchi {
 
         state.fertilizerCount = setInterval( () => {
             this.fertilizing()
-        }, 18000);
+        }, 25000);
 
         state.pesticideCount = setInterval( () => {
             this.bugging()

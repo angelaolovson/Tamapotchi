@@ -20,7 +20,6 @@ body {
     flex-direction: column;
     background-color: rgb(193, 179, 141);
     align-items: center;
-    
 }
 
 header {
@@ -476,9 +475,10 @@ button:hover{
     width: 230px;
     position: absolute;
     top: 150px;
-    left: 450px;
+    left: 400px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    z-index: 20;
 }
 
 #fertilizerGif {

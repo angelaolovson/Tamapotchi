@@ -1,6 +1,7 @@
 # Tamapotchi - growing plants
 Grow a flower from a pot. Keep it growing until level 10 to bloom by watering properly, making sure it has enough sunlight, keeping bugs away, and feeding it plant food sometimes. Any overdo will keep the plant.
 
+[TAMAPOTCHI](https://angelaolovson.github.io/Tamapotchi/)
 
 ## Wireframe
 ![project1](./images/wireframe_screenshot.png)
@@ -22,10 +23,10 @@ Grow a flower from a pot. Keep it growing until level 10 to bloom by watering pr
 
 ## Rules
 Best to keep data in the ranges below:
-- 3 <= Water <= 8
-- 5 <= Sunlight <= 10
-- 3 <= Fertilizer <= 6
-- 0 <= Pesticide <= 4
+- 3 < Water < 8
+- 5 < Sunlight
+- 4 < Fertilizer < 8
+- 0 <= Pesticide < 5
 
 Click on buttons to increase/decrease data:
 - Water +2
