@@ -191,7 +191,7 @@ class Tamapotchi {
 
     born () {
         messages.innerText = ("A secret seed has been planted and waiting for sprouting!");
-        setTimeout("messages.classList.toggle('hidden')", 3000);
+        setTimeout("messages.classList.toggle('hidden')", 5000);
                 
         //⏰ starting all intervals (that live inside my state object)
         state.growCount = setInterval(() => {
