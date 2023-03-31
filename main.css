@@ -17,9 +17,11 @@
 
 body {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     background-color: rgb(193, 179, 141);
     align-items: center;
+    height: 100vh;
 }
 
 header{
@@ -58,10 +60,9 @@ footer {
 }
 .screen {
     position: relative;
-    height: 460px;
-    width: 600px;
+    height: 450px;
+    width: 590px;
     background-color: rgb(193, 179, 141);
-    z-index: -20;
 }
 
 .dataBox {
@@ -335,8 +336,10 @@ button:hover{
     background: url(./images/screenwithoutbackground_v3.gif);
     background-size: contain;
     background-repeat: no-repeat;
+    position: absolute;
     height: 460px;
     width: 600px;
+    z-index: 5;
 }
 
 #sky {
@@ -347,7 +350,7 @@ button:hover{
     position: absolute;
     top: 5px;
     left: 5px;
-    z-index: -8;
+    z-index: 0;
     opacity: .9;
 }
 
@@ -360,7 +363,7 @@ button:hover{
     position: absolute;
     top: 5px;
     left: 5px;
-    z-index: -6;
+    z-index: 1;
 }
 
 #blackLayer{
@@ -370,7 +373,7 @@ button:hover{
     background-color: black;
     height: 460px;
     width: 600px;
-    z-index: 0;
+    z-index: 20;
     opacity: .5;
 }
 
@@ -383,7 +386,7 @@ button:hover{
     position: absolute;
     top: 165px;
     left: 270px;
-    z-index: 5;
+    z-index: 6;
 }
 
 #sproutGif {
@@ -445,7 +448,7 @@ button:hover{
     position: absolute;
     top: 121px;
     left: 250px;
-    z-index: 20;
+    z-index: 15;
 }
 
 #sunGif {
@@ -457,7 +460,7 @@ button:hover{
     position: absolute;
     top: -20px;
     left: 2px;
-    z-index: -5;
+    z-index: 1;
 }
 
 #wateringCanGif {

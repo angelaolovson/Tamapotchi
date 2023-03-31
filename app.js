@@ -41,15 +41,21 @@ const butterfly = document.getElementById("butterfly")
 const storm = document.getElementById("storm")
 const blackLayer = document.getElementById("blackLayer")
 
-//User's name
-let userName = prompt("Please enter your name", )
-if(userName != null) {
-    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
-    messages.classList.toggle("hidden");
-} else {
-    messages.innerText = "Hi stranger! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
-    messages.classList.toggle("hidden");
-}
+
+// adding eventListner
+
+
+
+
+// //User's name
+// let userName = prompt("Please enter your name", )
+// if(userName != null) {
+//     messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
+//     messages.classList.toggle("hidden");
+// } else {
+//     messages.innerText = "Hi stranger! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
+//     messages.classList.toggle("hidden");
+// }
 
 // Starting data & rules
 class Tamapotchi {
@@ -200,7 +206,7 @@ class Tamapotchi {
 
         state.waterCount = setInterval( () => {
             this.watering()
-        }, 9000);
+        }, 8000);
 
         state.sunlightCount = setInterval( () => {
             this.sunlighting()
@@ -308,8 +314,9 @@ function deadPlant () {
 function restart () {
     restartButton.classList.toggle("hidden");
     restartButton.addEventListener("click",function(){
-            window.location.reload();
-        })
+        window.location.reload();
+    })
+    
 }
 
 function replay () {
