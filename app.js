@@ -47,15 +47,15 @@ const blackLayer = document.getElementById("blackLayer")
 
 
 
-// //User's name
-// let userName = prompt("Please enter your name", )
-// if(userName != null) {
-//     messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
-//     messages.classList.toggle("hidden");
-// } else {
-//     messages.innerText = "Hi stranger! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
-//     messages.classList.toggle("hidden");
-// }
+//User's name
+let userName = prompt("Please enter your name", )
+if(userName != null) {
+    messages.innerText = "Hi "+userName+"! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
+    messages.classList.toggle("hidden");
+} else {
+    messages.innerText = "Hi stranger! Ready to plant a seed? Click Start(top right), wait on messages poping on HERE, follow them and click on the buttons(right) to keep me alive!";
+    messages.classList.toggle("hidden");
+}
 
 // Starting data & rules
 class Tamapotchi {

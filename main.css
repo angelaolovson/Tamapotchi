@@ -255,9 +255,9 @@ button:hover{
 #restartButton {
     position: absolute;
     top: 40%;
-    left: 40%;
-    height: 10%;
-    width: 20%;
+    left: 30%;
+    height: 80px;
+    width: 240px;
     text-align: center;
     font-size: 40px;
     z-index: 50;
